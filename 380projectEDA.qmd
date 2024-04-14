@@ -7,25 +7,10 @@ editor: visual
 
 ## Introduction
 
-My project here will be focused around Car Accidents asking questions such as which make(brand) of cars gets into the most accidents? how
+My project here will be focused around Car Accidents asking questions such as which make(brand) of cars gets into the most accidents? How old were the drivers involved in the accidents? does age and the make of the car have a correlation between them? my goal of this project is to find out the top car makes and the demographics of the people involved in those accidents in the country and states. I believe this is important in order to address a further investigation into this concern of mine and find solutions in order to attempt to stop tragedies that take the lives of thousands of Americans every year. ML can help us in this case by finding trends, patterns, and risk factors in the car's make and the demographic of the person in collected data sets
 
-## Illstration
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
+## Illustration
 
 ## Background and Related Work
 
-## Data Processing 
+## Data Processing
