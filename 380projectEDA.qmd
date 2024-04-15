@@ -17,4 +17,69 @@ I created this graph in powerpoint using information from https://www.lendingtre
 
 ## Background and Related Work
 
+Source: nytimes\
+\
+In this article it reviews the fact that since the automotive the number of accidents has steady decrease over the past century. But in recently years only the untied states saw a increase in deaths with the involvement of a motor vehicle while others like south Korea and Canada is still seeing a decline or flattening out. This article addresses some factors that could contribute to this such as cell phone culture, lack of walk able spaces, and substances that hinders the drivers judgement. This article attempts to create an insight that is similar to mine on what is causing these crashes to happen and what could be done about it.
+
 ## Data Processing
+
+This data set was taking from kaggle
+
+This data set used records car accidents from 2003 to 2015 as well as showing us the location of the crash, how many cars were involved, was there any injuries, and what caused the crash to happened in the first place
+
+**Setting up data set for R**
+
+```{r}
+library(readr)#packages needed
+
+# Read the CSV file into a data frame
+df <- read.csv("https://raw.githubusercontent.com/andydagao/380project/main/Copy%20of%20new%20dataset.csv", sep=",")
+```
+
+**Cleaning data set**
+
+```{r}
+#removing rows where it has NA
+df <- na.omit(df)
+
+#setting column names to lowercase
+names(df) <- tolower(names(df))
+
+#replaceing every . with _
+names(df) <- gsub("\\.", "_", names(df))
+
+#renaming weekend column
+names(df)[names(df) == "weekend_"] <- "weekend"
+
+```
+
+**Statistics**
+
+```{r}
+library(ggplot2)# library needed
+
+#bar grapg of the collusion type and the injuries reported from them
+ggplot(df, aes(x = collision_type, fill = injury_type)) +
+  geom_bar()
+
+```
+
+As we can see from this bar graph accidents involving 2 cars is significantly higher than any of the rest with the runner up of only being 1 car accidents is not even a 3rd of accidents involving 2 cars. But thankfully we can see that most of the accidents resulted in no injuries or life threatening
+
+```{r}
+#package needed
+library(dplyr)
+
+#top causes for crashes
+top5reasons <- df %>%
+  select(primary_factor) %>%#select the variable of intrest
+  count(primary_factor) %>%#count frequency 
+  arrange(desc(n))%>%#arrange from highest to lowest
+  head(5)#get top 5 results
+
+top5reasons
+```
+
+As we can see here the top 5 causes of accidents with the failure to yield the right of way being the most common way that accidents occur. Others include following to closely, Other(which could be anything), unsafe backing, or ran off road.
+
+Some issues could be easily fix such as unsafe backing which can be solved with more sensors and cameras installed which can prevent such situations from happening, others such as failure to yield may be more difficult because it all depends on the driver's ability
