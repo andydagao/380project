@@ -1,9 +1,16 @@
 ---
 title: "380ProjectEDA"
 author: "Andy Gao"
-format: pdf
+format: html
 editor: visual
 ---
+
+```{r}
+install.packages("renv")
+renv::activate()
+renv::install("quarto")
+
+```
 
 ## Introduction
 
@@ -11,19 +18,19 @@ My project here will be focused around Car Accidents asking questions such as wh
 
 ## Illustration
 
-![](Screenshot 2024-04-14 124410.png)
+![](Screenshot%202024-04-14%20124410.png)
 
 I created this graph in powerpoint using information from https://www.lendingtree.com/ that shows the the most common car make in accidents in the United States, It shows us that among the top 5 is Ram, Tesla, Subaru, Volkswagen, and Mazda as the most common car makes to be in an accident. But with this image alone doesn't tell us much. It only tells us the most common makes and not other information such as where the accidents happen?, who was the driver?, was the driver under the influence of any substances? and many other important information that is not shown here. But this is a 1st step and one of many in order to reach my end goal of the most common characteristics of a car accident.
 
 ## Background and Related Work
 
-Source: nytimes\
+Source: https://www.nytimes.com/2023/12/11/briefing/us-traffic-deaths.html\
 \
 In this article it reviews the fact that since the automotive the number of accidents has steady decrease over the past century. But in recently years only the untied states saw a increase in deaths with the involvement of a motor vehicle while others like south Korea and Canada is still seeing a decline or flattening out. This article addresses some factors that could contribute to this such as cell phone culture, lack of walk able spaces, and substances that hinders the drivers judgement. This article attempts to create an insight that is similar to mine on what is causing these crashes to happen and what could be done about it.
 
 ## Data Processing
 
-This data set was taking from kaggle
+This data set was taking from https://www.kaggle.com/
 
 This data set used records car accidents from 2003 to 2015 as well as showing us the location of the crash, how many cars were involved, was there any injuries, and what caused the crash to happened in the first place
 
